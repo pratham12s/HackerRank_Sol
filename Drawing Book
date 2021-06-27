@@ -1,0 +1,28 @@
+def pageCount(n, p):
+    # Write your code here
+    ans=0
+    page=0
+    for i in range(n):
+        if page == p or (page+1)==p:
+            ans=i
+            break
+        page+=2
+    ans1=0
+    page1=n
+    
+    if n%2 ==0:
+        for j in range(n):
+            if page1==p or (page1+1)==p:
+                ans1=j
+                break
+            page1-=2
+    else:
+        for j in range(n):
+            if page1==p or (page1-1)==p:
+                ans1=j
+                break
+            page1-=2
+    if ans<=ans1:
+        return ans
+    else:
+        return ans1
